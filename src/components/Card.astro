@@ -1,0 +1,65 @@
+---
+import { cardData } from "../data/data";
+---
+
+<section class="service flex-between">
+  {
+    cardData.map((data) => (
+      <div class="card">
+        <h2>{data.title}</h2>
+        <p>{data.subtitle}</p>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  .service {
+    width: 90%;
+    margin-inline: auto;
+    min-height: 70vh;
+    display: grid;
+    place-items: center;
+  }
+  .card {
+    text-align: center;
+    flex-basis: 32%;
+    border: 1px solid transparent;
+    padding: 1em;
+    border-radius: 10px;
+    transition: animation 400ms ease, scale 300ms ease-in-out;
+    scale: 0.95;
+    transition-duration: 500ms;
+    animation: border-animation 20s linear infinite;
+  }
+  .card:hover {
+    scale: 1;
+  }
+  h2 {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-xl);
+    color: hsl(var(--clr-grey-400));
+    line-height: var(--fs-xl);
+  }
+  p {
+    font-weight: 400;
+    margin-top: 1rem;
+  }
+  @keyframes border-animation {
+    0% {
+      border-color: hsl(var(--clr-red));
+    }
+    25% {
+      border-color: hsl(var(--clr-grey-400));
+    }
+    50% {
+      border-color: hsl(var(--clr-grey));
+    }
+    75% {
+      border-color: hsl(var(--clr-grey-400));
+    }
+    100% {
+      border-color: hsl(var(--clr-geen));
+    }
+  }
+</style>

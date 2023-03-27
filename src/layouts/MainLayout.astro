@@ -1,0 +1,14 @@
+---
+import Navbar from "../components/Navbar.astro";
+import HeadLayout from "./HeadLayout.astro";
+---
+
+<html lang="en">
+  <HeadLayout title={"ELARA 🍔 OUTSTANDING EUROPEAN CUISINE"} />
+  <body>
+    <Navbar />
+    <main>
+      <slot>Default Text</slot>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+---
+const { title } = Astro.props;
+---
+
+<h2 class="title">{title}</h2>
+
+<style>
+  .title {
+    font-size: var(--fs-3xl);
+    color: hsl(var(--clr-grey-400));
+    font-family: var(--font-secondary);
+    line-height: var(--fs-3xl);
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+  }
+</style>

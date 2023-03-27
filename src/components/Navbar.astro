@@ -1,0 +1,117 @@
+---
+// libray import
+import { Image } from "@astrojs/image/components";
+
+//assets
+import logo from "../../public/logo.svg";
+import { nav } from "../data/data";
+---
+
+<header class="flex-center">
+  <nav class="flex-between">
+    <a class="contact" href="">Contact</a>
+    <a href="/" class="logo">
+      <Image src={logo} alt="" typeof="avif" width={100} class="logo-img" />
+    </a>
+    <div class="menu" id="openMenu">Menu</div>
+    <ul class="nav-menu flex-center">
+      {
+        nav.map((item) => (
+          <li>
+            <a href={item.path} class="gradient-text">
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+      <div class="close-btn menu" id="closeMenu">close</div>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: relative;
+    min-height: 80px;
+  }
+  .contact,
+  .menu {
+    text-transform: uppercase;
+    padding: 14px 22px;
+    background-color: transparent;
+    border-radius: var(--radius);
+    transition: border 400ms ease-in;
+    border: 1px solid transparent;
+    font-size: var(--fs-xs);
+    cursor: pointer;
+  }
+  .contact:hover,
+  .menu:hover {
+    border: 0.5px solid hsl(var(--clr-grey));
+  }
+  .contact:focus {
+    border: 0.5px solid hsl(var(--clr-grey));
+    outline: 0.5px solid hsl(var(--clr-grey) / 7);
+  }
+  header {
+  }
+
+  nav {
+    width: 80%;
+    margin-inline: auto;
+  }
+  .nav-menu {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: -100vh;
+    flex-direction: column;
+    background-color: hsl(var(--clr-blue));
+    left: 0;
+    transition: top 400ms ease;
+    z-index: 1;
+  }
+  .nav-menu.active {
+    top: 0;
+  }
+  li > a {
+    font-size: var(--fs-2xl);
+    text-transform: uppercase;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    letter-spacing: var(--ls-xl);
+    transition: color 200ms ease-in;
+  }
+  li > a:hover {
+    animation: none;
+    color: hsl(var(--clr-red));
+  }
+  .close-btn {
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      width: 95%;
+    }
+
+    .logo-img {
+      width: 80px;
+    }
+  }
+</style>
+
+<script>
+  const navItem = document.querySelector(".nav-menu");
+  const openBtn = document.querySelector("#openMenu");
+  const closeMenu = document.querySelector("#closeMenu");
+
+  openBtn.addEventListener("click", function () {
+    navItem.classList.toggle("active");
+  });
+  closeMenu.addEventListener("click", function () {
+    navItem.classList.toggle("active");
+  });
+</script>

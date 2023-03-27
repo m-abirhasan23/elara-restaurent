@@ -1,0 +1,76 @@
+:root {
+  /* color list  */
+  --clr-blue: 215, 43%, 13%;
+  --clr-grey: 32, 100%, 88%;
+  --clr-red: 349, 57%, 48%;
+  --clr-green: 185, 51%, 25%;
+
+  --clr-grey-400: 32, 70%, 69%;
+  /* font family  */
+
+  --font-secondary: "Forum", cursive;
+  --font-primary: "Poppins", sans-serif;
+  /* font size  */
+  --fs-xs: 12px;
+  --fs-sm: 16px;
+  --fs-regular: 18px;
+  --fs-lg: 35px;
+  --fs-xl: 50px;
+  --fs-2xl: 70px;
+  --fs-3xl: 98px;
+  --fs-4xl: 120px;
+
+  /* letter spacing  */
+  --ls-xl: 2.4px;
+
+  --transition: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* padding  */
+  --padding-sm: 14px 22px;
+  --padding-lg: 22px 42px;
+
+  /* radius  */
+  --radius: 80px;
+  /* box shadow  */
+  --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* custom styles */
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    45deg,
+    hsl(var(--clr-grey-400)),
+    hsl(var(--clr-green)),
+    hsl(var(--clr-grey))
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 25s ease infinite;
+  -webkit-animation: gradient 25s ease infinite;
+}
+
+/* Create a keyframe animation */
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}

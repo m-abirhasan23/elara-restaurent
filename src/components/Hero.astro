@@ -1,0 +1,46 @@
+---
+import { Image } from "@astrojs/image/components";
+// assets
+import gradient from "../../public/gradient.svg";
+import HeroLayout from "../layouts/HeroLayout.astro";
+const data = {
+  title: "OUTSTANDING EUROPEAN CUISINE",
+  subtitle:
+    "We use only the finest local ingredients available and offer seasonal specials throughout the year",
+  outline: true,
+  path: "/booking",
+  buttonText: "Book a table",
+};
+---
+
+<section class="hero" aria-label="Hero section">
+  <HeroLayout data={data} />
+
+  <Image
+    src={gradient}
+    alt=""
+    typeof=""
+    aspectRatio={1 / 1}
+    class="gradient-img"
+  />
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .gradient-img {
+    position: absolute;
+    bottom: -12vh;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+  }
+</style>

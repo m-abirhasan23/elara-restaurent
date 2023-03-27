@@ -1,0 +1,72 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/reset.css";
+import "../styles/style.css";
+---
+
+<MainLayout>
+  <section class="error-page">
+    <h1 class="headline">PAGE NOT FOUND</h1>
+    <p>The page you are looking for doesn't exist or has been moved</p>
+    <a href="/" class="outline-btn">back to home</a>
+  </section>
+</MainLayout>
+
+<style>
+  .error-page {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .headline {
+    font-size: var(--fs-4xl);
+    text-align: center;
+    width: 50%;
+    margin-inline: auto;
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    line-height: var(--fs-4xl);
+    color: hsl(var(--clr-grey-400));
+  }
+  p {
+    font-size: var(--fs-regular);
+    font-weight: 400;
+    text-align: center;
+    width: 30%;
+    margin-inline: auto;
+    color: hsl(var(--clr-grey));
+    margin-block: 1em;
+    line-height: 30px;
+    opacity: 0.7;
+  }
+
+  .table-btn {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 1em 0;
+  }
+  .outline-btn {
+    text-transform: uppercase;
+    letter-spacing: var(--ls-xl);
+    background-color: transparent;
+    border: 1px solid hsl(var(--clr-grey));
+    padding: 22px 42px;
+    border-radius: 80px;
+    transition: background-color 400ms var(--transition),
+      color 400ms var(--transition);
+    line-height: 130%;
+    color: hsl(var(--clr-grey));
+    cursor: pointer;
+  }
+  .outline-btn:hover {
+    background-color: hsl(var(--clr-red));
+    border: 1px solid hsl(var(--clr-red));
+  }
+
+  .outline-btn:focus {
+    outline-color: hsl(var(--clr-grey));
+  }
+</style>

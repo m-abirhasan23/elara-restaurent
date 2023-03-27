@@ -1,0 +1,135 @@
+---
+import Image from "@astrojs/image";
+import { aboutData } from "../data/data";
+interface Image {
+  src: string;
+  alt: string;
+  class: string;
+}
+---
+
+<section class="about">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {
+        aboutData.map((img) => (
+          <div class="swiper-slide" data-swiper-autoplay="2000">
+            <div class="about-info">
+              <span class="gradient-text">Our story</span>
+              <p>
+                Michel and Maria were ambitious graduates from a culinary
+                school, who embarked on an exciting journey in the summer of
+                1987 by acquiring an old and abandoned warehouse in the eastern
+                part of Paris. Driven by their passion for culinary excellence,
+                they envisioned renovating this space and transforming it into a
+                remarkable French restaurant that would embody both the
+                traditions of the past and the innovations of the future.{" "}
+                <span>
+                  Their project was a bold undertaking that required significant
+                  effort, creativity, and determination, but their hard work
+                  ultimately paid off. The result was the birth of a unique and
+                  inspiring restaurant, Elara, which quickly became one of the
+                  most iconic and beloved culinary destinations in France. By
+                  infusing classic French cuisine with modern techniques and
+                  artistic flair, Michel and Maria had successfully created a
+                  masterpiece that delighted the senses and captivated the
+                  hearts of all who dined there.
+                </span>
+              </p>
+            </div>
+            <div class="about-content">
+              <img src={img.imgSrc} alt="" class="about-img" />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: #2c3e50; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to bottom,
+      hsl(var(--clr-blue)),
+      #2c3e50
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--clr-blue)),
+      #2c3e50
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  .swiper {
+    width: 90%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+
+  .swiper-slide {
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .about-info {
+    flex-basis: 50%;
+  }
+  .about-info > span {
+    display: block;
+    font-size: var(--fs-xl);
+    color: hsl(var(--clr-grey-400));
+    font-family: var(--font-secondary);
+  }
+
+  .about-info p {
+    font-size: var(--fs-sm);
+    font-weight: normal;
+    color: hsl(var(--clr-grey-400) / 8);
+    line-height: 150%;
+    width: 90%;
+    opacity: 0.8;
+  }
+  .about-info p > span {
+    display: block;
+    margin-top: 0.5em;
+  }
+  .about-content {
+    flex-basis: 50%;
+  }
+  .about-img {
+    width: 100%;
+    object-fit: cover;
+    height: 80vh;
+    border-radius: 10px;
+  }
+</style>
+
+<!-- Swiper JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+></script>
+<script>
+  import { Autoplay, Navigation, Swiper } from "swiper";
+  import "swiper/css";
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
+  // import required modules
+
+  var swiper = new Swiper(".mySwiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: true,
+    },
+    loop: true,
+    modules: [Autoplay, Navigation],
+  });
+</script>

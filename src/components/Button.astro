@@ -1,0 +1,37 @@
+---
+const { text, button, a, path, outline } = Astro.props;
+---
+
+{button ? <button>{text}</button> : <a href={path}>{text}</a>}
+
+<style>
+  button,
+  a {
+    text-transform: uppercase;
+    letter-spacing: var(--ls-xl);
+    background-color: hsl(var(--clr-red));
+    border: 0;
+    padding: 22px 42px;
+    border-radius: 80px;
+    transition: background-color 400ms var(--transition),
+      color 400ms var(--transition);
+    line-height: 130%;
+    color: hsl(var(--clr-grey));
+    cursor: pointer;
+  }
+  button:hover,
+  a:hover {
+    background-color: hsl(var(--clr-grey));
+    color: hsl(var(--clr-blue));
+  }
+  button:focus,
+  a:focus {
+    outline: 1px solid hsl(var(--clr-grey));
+    border: 1px solid hsl(var(--clr-blue));
+  }
+  button:focus-visible,
+  a:focus-visible {
+    outline: 1px solid hsl(var(--clr-grey));
+    border: 1px solid hsl(var(--clr-blue));
+  }
+</style>
