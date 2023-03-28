@@ -58,3 +58,21 @@ export const cardData=[
       subtitle:"one day, in your search for happiness, you discover a partner by your side, and you realize that your happiness has come to help you search"
    },
 ]
+export const sliderData=[
+   {
+
+      imgSrc:"/slider-1.jpg"
+   },
+   {
+
+      imgSrc:"/slider-2.jpg"
+   },
+   {
+
+      imgSrc:"/slider-3.jpg"
+   },
+   {
+
+      imgSrc:"/slider-4.jpg"
+   },
+]

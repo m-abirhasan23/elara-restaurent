@@ -1,0 +1,88 @@
+---
+---
+
+<footer aria-label="Footer">
+  <nav class="footer-nav flex-between">
+    <ul>
+      <h4>social</h4>
+      <li><a href="instagram">instagram</a></li>
+      <li><a href="facebook">Facebook</a></li>
+      <li><a href="twitter">Twitter</a></li>
+    </ul>
+    <div class="line"></div>
+    <ul>
+      <h4>quick links</h4>
+      <li><a href="instagram">contact</a></li>
+      <li><a href="facebook">reservation</a></li>
+      <li><a href="twitter">our menu</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<style>
+  footer {
+    background: url(./gradient.svg);
+    height: 60vh;
+    width: 100%;
+  }
+  .footer-nav {
+    width: 40%;
+    margin-inline: auto;
+    height: 100%;
+
+    text-align: center;
+  }
+  h4 {
+    font-size: 25px;
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    color: hsl(var(--clr-grey));
+    font-weight: 300;
+  }
+  li {
+    margin-block: 1.2em;
+  }
+  li > a {
+    text-transform: uppercase;
+    font-size: var(--fs-regular);
+    font-weight: 300;
+  }
+
+  .line {
+    width: 1px;
+    height: 50%;
+    background-color: hsl(var(--clr-grey));
+    position: relative;
+    opacity: 0.3;
+  }
+  .line::after {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border: 1px solid hsl(var(--clr-grey));
+    top: -18px;
+    left: -10px;
+    border-radius: 50%;
+  }
+  .line::before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    border: 1px solid hsl(var(--clr-grey));
+    bottom: -8px;
+    left: -5px;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 600px) {
+    footer {
+      height: 60vh;
+    }
+    .footer-nav {
+      width: 90%;
+      padding-bottom: 5em;
+    }
+  }
+</style>

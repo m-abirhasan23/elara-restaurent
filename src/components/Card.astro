@@ -20,6 +20,7 @@ import { cardData } from "../data/data";
     min-height: 70vh;
     display: grid;
     place-items: center;
+    flex-wrap: wrap;
   }
   .card {
     text-align: center;
@@ -31,6 +32,7 @@ import { cardData } from "../data/data";
     scale: 0.95;
     transition-duration: 500ms;
     animation: border-animation 20s linear infinite;
+    cursor: pointer;
   }
   .card:hover {
     scale: 1;
@@ -60,6 +62,18 @@ import { cardData } from "../data/data";
     }
     100% {
       border-color: hsl(var(--clr-geen));
+    }
+  }
+  @media (max-width: 600px) {
+    .service {
+      padding-block: 2em;
+    }
+    .card {
+      flex-basis: 100%;
+    }
+    h2 {
+      font-size: var(--fs-lg);
+      font-weight: 300;
     }
   }
 </style>

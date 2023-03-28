@@ -33,6 +33,7 @@ const data = {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 0 auto;
   }
 
   .gradient-img {
@@ -42,5 +43,14 @@ const data = {
     right: 0;
     z-index: -1;
     width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      width: 100%;
+      min-height: 70vh;
+    }
+    .gradient-img {
+    }
   }
 </style>

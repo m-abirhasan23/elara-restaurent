@@ -1,0 +1,25 @@
+---
+import Button from "./Button.astro";
+import Slider from "./Slider.astro";
+import Title from "./Title.astro";
+---
+
+<section class="events" aria-label="Events">
+  <p class="event-title">WEDDINGS & EVENTS</p>
+  <Title title={"CATERING FOR YOUR WEDDINGS & EVENTS"} />
+  <Button text={"book a catering"} path="/" a={true} button={false} />
+  <Slider />
+</section>
+
+<style>
+  .events {
+    width: 100%;
+    margin-inline: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+</style>

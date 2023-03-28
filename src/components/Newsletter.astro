@@ -1,0 +1,91 @@
+---
+import Title from "./Title.astro";
+---
+
+<section class="newsletter" aria-label="Newsletter">
+  <div class="container">
+    <p>newsletter</p>
+    <Title title={` SIGN UP TO OUR NEWSLETTER`} />
+
+    <form action="" method="post">
+      <label for="email"></label>
+      <input type="email" name="email" id="email" placeholder="your email..." />
+      <input type="submit" value="submit" />
+    </form>
+  </div>
+</section>
+
+<style>
+  .newsletter {
+    width: 100%;
+    margin-block: 4em;
+  }
+  p {
+    text-align: center;
+    color: var(--clr-grey);
+    text-transform: uppercase;
+    padding-block: 1em;
+  }
+  .container {
+    width: 75%;
+    margin-inline: auto;
+    text-align: center;
+    background-color: hsla(var(--clr-blue-400));
+    padding: 3em 0;
+    border-radius: 20px;
+  }
+  form {
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+  input[type="email"] {
+    border: 0;
+    background-color: hsl(var(--clr-blue));
+    padding: 22px 62px;
+    border-radius: 80px;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: var(--ls-xl);
+    font-size: var(--fs-xs);
+    color: var(--clr-grey);
+  }
+  input[type="email"]:focus {
+    border: 1px solid hsl(var(--clr-grey-400));
+  }
+  input[type="submit"] {
+    text-transform: uppercase;
+    letter-spacing: var(--ls-xl);
+    background-color: hsl(var(--clr-red));
+    border: 0;
+    padding: 22px 62px;
+    border-radius: 80px;
+    transition: background-color 400ms var(--transition),
+      color 400ms var(--transition);
+    line-height: 130%;
+    color: hsl(var(--clr-grey));
+    cursor: pointer;
+    font-size: var(--fs-xs);
+    outline: none;
+    text-align: center;
+  }
+  input[type="submit"]:focus {
+    border: 1px solid hsl(var(--clr-grey-400));
+  }
+  @media (max-width: 600px) {
+    .container {
+      width: 90%;
+    }
+    form {
+      gap: 0;
+    }
+    input[type="submit"],
+    input[type="email"] {
+      width: 80%;
+      margin-bottom: 1em;
+    }
+  }
+</style>

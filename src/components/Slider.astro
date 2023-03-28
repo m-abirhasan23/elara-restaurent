@@ -1,0 +1,67 @@
+---
+import { sliderData } from "../data/data";
+---
+
+<div class="slider">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {
+        sliderData.map((item) => (
+          <div class="swiper-slide">
+            <img src={item.imgSrc} alt="" class="slider-img" />
+          </div>
+        ))
+      }
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+<style>
+  .swiper {
+    width: 90%;
+    margin-top: 2em;
+    cursor: pointer;
+  }
+  .slider {
+    width: 100%;
+    margin-inline: auto;
+  }
+  .slider-img {
+    height: 90vh;
+    width: 90%;
+
+    object-fit: cover;
+    margin-inline: auto;
+    border-radius: 10px;
+  }
+  .swiper-slide-next {
+    scale: 0.9;
+  }
+  .swiper-slide-prev {
+    scale: 0.9;
+  }
+  @media (max-width: 600px) {
+    .swiper {
+      width: 100%;
+    }
+    .slider-img {
+      height: 50vh;
+      width: 90%;
+    }
+  }
+</style>
+
+<!-- Initialize Swiper -->
+<script>
+  import { Swiper } from "swiper";
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    rewind: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>

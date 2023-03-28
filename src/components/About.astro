@@ -75,15 +75,17 @@ interface Image {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap-reverse;
   }
   .about-info {
     flex-basis: 50%;
   }
   .about-info > span {
     display: block;
-    font-size: var(--fs-xl);
+    font-size: var(--fs-2xl);
     color: hsl(var(--clr-grey-400));
     font-family: var(--font-secondary);
+    text-transform: uppercase;
   }
 
   .about-info p {
@@ -93,6 +95,7 @@ interface Image {
     line-height: 150%;
     width: 90%;
     opacity: 0.8;
+    font-weight: lighter;
   }
   .about-info p > span {
     display: block;
@@ -107,6 +110,29 @@ interface Image {
     height: 80vh;
     border-radius: 10px;
   }
+
+  @media (max-width: 600px) {
+    .about {
+      padding-block: 3em;
+    }
+    .about-info {
+      flex-basis: 100%;
+      text-align: center;
+    }
+    .about-content {
+      flex-basis: 100%;
+    }
+    .about-img {
+      height: 50vh;
+    }
+
+    p {
+      margin-inline: auto;
+    }
+
+    .gradient-text{
+      font-size: 22px;
+  }
 </style>
 
 <!-- Swiper JS -->
@@ -114,7 +140,7 @@ interface Image {
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
 ></script>
 <script>
-  import { Autoplay, Navigation, Swiper } from "swiper";
+  import { Autoplay,Navigation,Swiper } from "swiper";
   import "swiper/css";
   import "swiper/css/navigation";
   import "swiper/css/pagination";
@@ -126,7 +152,7 @@ interface Image {
       prevEl: ".swiper-button-prev",
     },
     autoplay: {
-      delay: 4000,
+      delay: 104000,
       disableOnInteraction: true,
     },
     loop: true,
