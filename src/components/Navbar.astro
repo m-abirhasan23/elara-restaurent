@@ -44,6 +44,8 @@ import { nav } from "../data/data";
     border: 1px solid transparent;
     font-size: var(--fs-xs);
     cursor: pointer;
+    position: relative;
+    letter-spacing: var(--ls-xl);
   }
   .contact:hover,
   .menu:hover {
@@ -53,13 +55,16 @@ import { nav } from "../data/data";
     border: 0.5px solid hsl(var(--clr-grey));
     outline: 0.5px solid hsl(var(--clr-grey) / 7);
   }
+
   header {
+    background-color: transparent;
   }
 
   nav {
-    width: 80%;
+    width: 90%;
     margin-inline: auto;
   }
+
   .nav-menu {
     position: absolute;
     height: 100vh;
@@ -69,7 +74,7 @@ import { nav } from "../data/data";
     background-color: hsl(var(--clr-blue));
     left: 0;
     transition: top 400ms ease;
-    z-index: 1;
+    z-index: 99;
   }
   .nav-menu.active {
     top: 0;

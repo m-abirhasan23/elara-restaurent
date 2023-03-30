@@ -1,0 +1,50 @@
+---
+const { food } = Astro.props;
+console.log(food);
+---
+
+<div class="food-card">
+  <h4>{food.name}</h4>
+  <p>{food.category}</p>
+  <h5 class="food-price">{food.price}</h5>
+</div>
+
+<style>
+  .food-card {
+    display: flex;
+    background: linear-gradient(
+      45deg,
+      hsla(var(--clr-green), 0.6),
+      hsla(var(--clr-red), 0.6)
+    );
+    margin-block: 1em;
+    width: 80%;
+    margin-inline: auto;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 8px;
+    background-size: 500%;
+  }
+  .food-card > * {
+    width: 33%;
+  }
+
+  h4 {
+    text-align: left;
+    font-size: var(--fs-regular);
+    text-transform: capitalize;
+  }
+  p {
+    text-align: center;
+    text-transform: capitalize;
+  }
+  h5 {
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .food-card {
+      width: 90%;
+    }
+  }
+</style>

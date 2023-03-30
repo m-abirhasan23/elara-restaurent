@@ -63,6 +63,18 @@
   -webkit-animation: gradient 25s ease infinite;
 }
 
+.headline {
+  font-size: var(--fs-4xl);
+  text-align: center;
+  width: 70%;
+  margin-inline: auto;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  line-height: var(--fs-4xl);
+  color: hsl(var(--clr-grey-400));
+  text-transform: uppercase;
+}
+
 /* Create a keyframe animation */
 @keyframes gradient {
   0% {
@@ -73,5 +85,12 @@
   }
   100% {
     background-position: 0 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .headline {
+    font-size: var(--fs-xl);
+    line-height: 45px;
   }
 }

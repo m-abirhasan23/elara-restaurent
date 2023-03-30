@@ -1,0 +1,51 @@
+---
+import { Image } from "@astrojs/image/components";
+import bg from "../../public/bg.jpg";
+import { menuData } from "../data/menuData";
+import FoodCard from "./FoodCard.astro";
+---
+
+<section class="food-menu-section">
+  <div class="food-menu-header">
+    <div class="headline food-menu-title">Our Menu</div>
+    <Image src={bg} alt="" class="food-section-img" />
+  </div>
+
+  <div class="food-card-container">
+    {menuData.map((food) => <FoodCard food={food} />)}
+  </div>
+</section>
+
+<style>
+  .food-section-img {
+    width: 80%;
+    margin-inline: auto;
+    object-fit: cover;
+    height: 300px;
+    position: relative;
+    border-radius: 10px;
+    filter: opacity(0.5);
+  }
+  .food-menu-header {
+    position: relative;
+  }
+  .food-menu-title {
+    position: absolute;
+
+    z-index: 1;
+    text-align: center;
+    inset: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @media (max-width: 600px) {
+    .food-section-img {
+      width: 90%;
+      margin-inline: auto;
+      object-fit: cover;
+      height: 300px;
+      position: relative;
+    }
+  }
+</style>
