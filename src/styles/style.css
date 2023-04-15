@@ -52,9 +52,8 @@
 .gradient-text {
   background: linear-gradient(
     45deg,
-    hsl(var(--clr-grey-400)),
-    hsl(var(--clr-green)),
-    hsl(var(--clr-grey))
+    hsla(var(--clr-grey-400), 1),
+    hsla(var(--clr-grey), 1)
   );
   background-size: 200%;
   -webkit-background-clip: text;

@@ -41,11 +41,15 @@
   }
   li {
     margin-block: 1.2em;
+    transition: color 400ms ease;
   }
   li > a {
     text-transform: uppercase;
     font-size: var(--fs-regular);
     font-weight: 300;
+  }
+  li:hover a {
+    color: hsl(var(--clr-red));
   }
 
   .line {
