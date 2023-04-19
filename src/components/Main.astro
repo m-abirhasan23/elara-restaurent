@@ -1,0 +1,140 @@
+---
+import { Image } from "@astrojs/image/components";
+import backgroundBgMini from "../assets/hero-background-mini.png";
+import backgroundBg from "../assets/hero-background.png";
+const data = {
+  title: "OUTSTANDING EUROPEAN CUISINE",
+  subtitle:
+    "We use only the finest local ingredients available and offer seasonal specials throughout the year",
+  outline: true,
+  path: "/booking",
+  buttonText: "Book a table",
+};
+---
+
+<section aria-label="Hero Section" class="hero-section">
+  <div class="background">
+    <Image
+      src={backgroundBg}
+      alt=""
+      class="hero-image"
+      typeof="avif"
+      fit={"cover"}
+    />
+    <Image
+      src={backgroundBgMini}
+      alt=""
+      class="hero-image-mini"
+      typeof="avif"
+      fit={"cover"}
+    />
+  </div>
+  <div class="content">
+    <h1 class="headline">
+      Indulge the flavors of Spain with our traditional <span
+        >Spanish dishes</span
+      >.
+    </h1>
+    <div class="content-footer">
+      <p>since 1960,mardrid,spain</p>
+      <div class="line"></div>
+    </div>
+    <a href="outline-btn" class="outline-btn">Book a table</a>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+  }
+  .background {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    max-width: 1440px;
+    overflow: hidden;
+  }
+  .background::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    height: 100vh;
+    width: 100%;
+    background: radial-gradient(
+      100% 197.75% at 0% 3.32%,
+      rgba(191, 52, 78, 0.25) 0%,
+      rgba(191, 52, 78, 0.25) 0.01%,
+      rgba(22, 194, 194, 0.25) 96.88%
+    );
+  }
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.35);
+  }
+  .hero-image-mini {
+    display: none;
+  }
+
+  .content {
+    position: absolute;
+    right: 2.5%;
+    left: 2.5%;
+    top: 0;
+    width: 95%;
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .content-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    text-transform: capitalize;
+    color: hsl(var(--clr-grey), 0.8);
+  }
+
+  .outline-btn {
+    text-transform: uppercase;
+    letter-spacing: var(--ls-xl);
+    background-color: hsl(var(--clr-red));
+    border: 1px solid hsl(var(--clr-grey));
+    padding: 15px 42px;
+    border-radius: 80px;
+    transition: background-color 400ms var(--transition),
+      color 400ms var(--transition);
+    line-height: 130%;
+    color: hsl(var(--clr-grey));
+    cursor: pointer;
+    font-size: var(--fs-sm);
+  }
+  .outline-btn:hover {
+    background-color: hsl(var(--clr-red));
+    border: 1px solid hsl(var(--clr-red));
+  }
+
+  .outline-btn:focus {
+    outline-color: hsl(var(--clr-grey));
+    font-size: var(--fs-sm);
+  }
+
+  @media (max-width: 600px) {
+    .hero-image {
+      display: none;
+    }
+    .hero-image-mini {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.35);
+    }
+  }
+</style>

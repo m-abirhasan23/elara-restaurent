@@ -34,4 +34,10 @@ const { text, button, a, path, outline } = Astro.props;
     outline: 1px solid hsl(var(--clr-grey));
     border: 1px solid hsl(var(--clr-blue));
   }
+  @media (max-width: 600px) {
+    button,
+    a {
+      padding: 15px 30px;
+    }
+  }
 </style>

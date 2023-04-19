@@ -1,3 +1,106 @@
+/* custom fonts  */
+/**
+ * @license
+ *
+ * Font Family: Clash Display
+ * Designed by: Indian Type Foundry
+ * URL: https://www.fontshare.com/fonts/clash-display
+ * © 2023 Indian Type Foundry
+ *
+ * Font Styles:
+ * Clash Display Variable(Variable font)
+ * Clash Display Extralight
+ * Clash Display Light
+ * Clash Display Regular
+ * Clash Display Medium
+ * Clash Display Semibold
+ * Clash Display Bold
+ *
+*/
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 700.0;
+*
+* available axes:
+
+* 'wght' (range from 200.0 to 700.0)
+
+*/
+
+@font-face {
+  font-family: "ClashDisplay-Variable";
+  src: url("../fonts/ClashDisplay-Variable.woff2") format("woff2"),
+    url("../fonts/ClashDisplay-Variable.woff") format("woff"),
+    url("../fonts/ClashDisplay-Variable.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Extralight";
+  src: url("../fonts/ClashDisplay-Extralight.woff2") format("woff2"),
+    url("../fonts/ClashDisplay-Extralight.woff") format("woff"),
+    url("../fonts/ClashDisplay-Extralight.ttf") format("truetype");
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Light";
+  src: url("../fonts/ClashDisplay-Light.woff2") format("woff2"),
+    url("../fonts/ClashDisplay-Light.woff") format("woff"),
+    url("../fonts/ClashDisplay-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Regular";
+  src: url("../fonts/ClashDisplay-Regular.woff2") format("woff2"),
+    url("../fonts/ClashDisplay-Regular.woff") format("woff"),
+    url("../fonts/ClashDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Medium";
+  src: url("../fonts/ClashDisplay-Medium.woff2") format("woff2"),
+    url("../fonts/ClashDisplay-Medium.woff") format("woff"),
+    url("../fonts/ClashDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Semibold";
+  src: url("../fonts/ClashDisplay-Semibold.woff2") format("woff2"),
+    url("../fonts/ClashDisplay-Semibold.woff") format("woff"),
+    url("../fonts/ClashDisplay-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Bold";
+  src: url("../fonts/ClashDisplay-Bold.woff2") format("woff2"),
+    url("../fonts/ClashDisplay-Bold.woff") format("woff"),
+    url("../fonts/ClashDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+
+/* custom fonts  */
+
 :root {
   /* color list  */
   --clr-blue: 215, 43%, 13%;
@@ -9,12 +112,13 @@
   --clr-grey-400: 32, 70%, 69%;
   /* font family  */
 
-  --font-secondary: "Forum", cursive;
+  --font-secondary: "ClashDisplay-Variable";
   --font-primary: "Poppins", sans-serif;
   /* font size  */
   --fs-xs: 12px;
   --fs-sm: 16px;
   --fs-regular: 18px;
+  --fs-semi: 27px;
   --fs-lg: 35px;
   --fs-xl: 50px;
   --fs-2xl: 70px;
@@ -49,27 +153,14 @@
   align-items: center;
 }
 
-.gradient-text {
-  background: linear-gradient(
-    45deg,
-    hsla(var(--clr-grey-400), 1),
-    hsla(var(--clr-grey), 1)
-  );
-  background-size: 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient 25s ease infinite;
-  -webkit-animation: gradient 25s ease infinite;
-}
-
 .headline {
-  font-size: var(--fs-4xl);
+  font-size: var(--fs-2xl);
   text-align: center;
-  width: 70%;
+  width: 85%;
   margin-inline: auto;
   font-family: var(--font-secondary);
-  font-weight: 400;
-  line-height: var(--fs-4xl);
+  font-weight: 700;
+  line-height: var(--fs-2xl);
   color: hsl(var(--clr-grey-400));
   text-transform: uppercase;
 }
@@ -89,7 +180,10 @@
 
 @media (max-width: 600px) {
   .headline {
-    font-size: var(--fs-xl);
+    font-size: 45px;
     line-height: 45px;
+  }
+  .headline {
+    width: 100%;
   }
 }

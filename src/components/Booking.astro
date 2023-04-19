@@ -1,0 +1,29 @@
+---
+---
+
+<section class="booking" id="booking" aria-label="booking a table">
+  <h1 class="headline">reserve a table</h1>
+  <form method="POST">
+    <label>
+      Username:
+      <input type="text" name="username" required />
+    </label>
+    <label>
+      Email:
+      <input type="email" name="email" required />
+    </label>
+    <label>
+      Password:
+      <input type="password" name="password" required minlength="6" />
+    </label>
+    <button>Submit</button>
+  </form>
+</section>
+
+<style>
+  .booking {
+    padding-block: 4rem;
+    min-height: 100vh;
+    margin-top: 2rem;
+  }
+</style>

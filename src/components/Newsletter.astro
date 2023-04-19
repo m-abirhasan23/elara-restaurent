@@ -1,12 +1,9 @@
 ---
-import Title from "./Title.astro";
 ---
 
 <section class="newsletter" aria-label="Newsletter">
   <div class="container">
-    <p>newsletter</p>
-    <Title title={` SIGN UP TO OUR NEWSLETTER`} />
-
+    <h3>SIGN UP TO OUR NEWSLETTER</h3>
     <form action="" method="post">
       <label for="email"></label>
       <input type="email" name="email" id="email" placeholder="your email..." />
@@ -19,12 +16,21 @@ import Title from "./Title.astro";
   .newsletter {
     width: 100%;
     margin-block: 4em;
+    min-height: 100vh;
+
+    display: grid;
+    place-items: center;
   }
-  p {
+  h3 {
     text-align: center;
-    color: var(--clr-grey);
+    color: hsl(var(--clr-grey-400));
     text-transform: uppercase;
-    padding-block: 1em;
+
+    font-size: var(--fs-2xl);
+    width: 80%;
+    margin-inline: auto;
+    font-weight: 700;
+    line-height: 110%;
   }
   .container {
     width: 75%;
@@ -86,6 +92,12 @@ import Title from "./Title.astro";
     input[type="email"] {
       width: 80%;
       margin-bottom: 1em;
+      padding: 15px 40px;
+    }
+
+    h3 {
+      font-size: var(--fs-semi);
+      padding: 0;
     }
   }
 </style>

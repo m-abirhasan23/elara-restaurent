@@ -31,8 +31,12 @@ import { nav } from "../data/data";
 
 <style>
   header {
-    position: relative;
+    position: absolute;
     min-height: 80px;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 999;
   }
   .contact,
   .menu {
@@ -106,7 +110,7 @@ import { nav } from "../data/data";
       width: 80px;
     }
     li > a {
-      font-size: var(--fs-xl);
+      font-size: var(--fs-semi);
     }
   }
 </style>

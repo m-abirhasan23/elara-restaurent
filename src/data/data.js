@@ -23,25 +23,6 @@ export const nav=[
 ]
 
 
-export const aboutData=[
-  
-   {
-
-      imgSrc:"/about-1.jpg"
-   },
-   {
-
-      imgSrc:"/about-2.jpg"
-   },
-   {
-
-      imgSrc:"/about-3.jpg"
-   },
-   {
-
-      imgSrc:"/about-4.jpg"
-   },
-]
 
 
 export const cardData=[
@@ -74,5 +55,20 @@ export const sliderData=[
    {
 
       imgSrc:"/slider-4.jpg"
+   },
+]
+
+export const aboutData=[
+   {
+      title:"The History and Legacy",
+      subtitle:"Botin, Madrid's iconic restaurant, serves delicious Spanish cuisine since 1725. Established by Jean Botin and his Spanish wife, it's the world's oldest continuously operating restaurant. With rustic interiors and famous patrons like Ernest Hemingway, its signature dish, cochinillo asado, is a must-try."
+   },
+   {
+      title:"The Legacy Continues",
+      subtitle:"More Than Two centuries, Botin has been a vital part of Madrid's culinary scene. The González family, the current owners, have preserved its traditions and values. Its reputation for quality and excellence has earned it a place in Madrid's cultural heritage, making it a must-visit for food lovers"
+   },
+   {
+      title:"The Ambience & Atmosphere",
+      subtitle:"Botin's rustic interiors, featuring ancient paintings, porcelain dishes, and vintage wine bottles, create an intimate and cozy atmosphere that transports diners to Madrid's aristocracy. With attentive and friendly staff, the dining experience feels like being part of the family"
    },
 ]
