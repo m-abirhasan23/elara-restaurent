@@ -4,19 +4,27 @@
 <section class="booking" id="booking" aria-label="booking a table">
   <h1 class="headline">reserve a table</h1>
   <form method="POST">
-    <label>
-      Username:
-      <input type="text" name="username" required />
-    </label>
-    <label>
-      Email:
-      <input type="email" name="email" required />
-    </label>
-    <label>
-      Password:
-      <input type="password" name="password" required minlength="6" />
-    </label>
-    <button>Submit</button>
+    <input type="text" name="name" required placeholder="enter your name" />
+
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="enter your email"
+      autocomplete=""
+    />
+    <input type="tel" name="telephone" id="" required placeholder="phone" />
+    <input
+      type="number"
+      name="gusest"
+      id=""
+      required
+      placeholder="number of guests"
+    />
+    <input type="date" name="date" id="" value="2012-3-23" />
+    <input type="time" name="time" id="" value={"12:00"} />
+
+    <button>reserve</button>
   </form>
 </section>
 
@@ -25,5 +33,72 @@
     padding-block: 4rem;
     min-height: 100vh;
     margin-top: 2rem;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin-inline: auto;
+    gap: 2rem;
+    flex-direction: column;
+    padding-block: 4rem;
+  }
+  input {
+    width: 50%;
+    min-height: 55px;
+    padding: 0 1rem;
+    font-family: var(--font-secondary);
+    background-color: transparent;
+    outline-color: transparent;
+    border: 1px solid hsla(var(--clr-grey-400), 0.5);
+    border-radius: 25px;
+    text-transform: uppercase;
+    color: hsla(var(--clr-grey-400), 0.5);
+    font-weight: 500;
+  }
+  input:focus {
+    border: 1px solid hsla(var(--clr-grey), 0.5);
+    outline: 1px solid hsla(var(--clr-grey), 0.5);
+  }
+  input::placeholder {
+    color: hsla(var(--clr-grey-400), 0.5);
+    font-weight: 500;
+  }
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+
+  button {
+    text-transform: uppercase;
+    letter-spacing: var(--ls-xl);
+    background-color: hsl(var(--clr-red));
+    border: 0;
+    padding: 15px 42px;
+    border-radius: 80px;
+    transition: background-color 400ms var(--transition),
+      color 400ms var(--transition);
+    line-height: 130%;
+    color: hsl(var(--clr-grey));
+    cursor: pointer;
+    font-size: var(--fs-regular);
+    font-weight: 500;
+    width: 50%;
+  }
+  button:is(:hover, :focus) {
+    background-color: hsl(var(--clr-grey));
+    color: hsl(var(--clr-blue));
+  }
+
+  @media (max-width: 600px) {
+    input,
+    button {
+      width: 100%;
+    }
   }
 </style>

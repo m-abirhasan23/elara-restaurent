@@ -61,11 +61,11 @@ svg {
 }
 
 /* reset default settings  */
-input,
+
 button,
 textarea,
 select {
-  font: inherit;
+  font-family: var(--font-secondary);
 }
 
 ::selection {
