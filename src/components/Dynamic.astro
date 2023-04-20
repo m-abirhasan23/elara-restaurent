@@ -1,0 +1,20 @@
+---
+const { text, path } = Astro.props;
+---
+
+<a class="contact" href={path}>{text}</a>
+
+<style>
+  a {
+    text-transform: uppercase;
+    padding: 14px 22px;
+    background-color: transparent;
+    border-radius: var(--radius);
+    transition: border 400ms ease-in;
+    border: 1px solid transparent;
+    font-size: var(--fs-xs);
+    cursor: pointer;
+    position: relative;
+    letter-spacing: var(--ls-xl);
+  }
+</style>

@@ -11,10 +11,7 @@ export const nav=[
     name:"contact",
     path:"/contact"
  },
- {
-    name:"about",
-    path:"/about"
- },
+
  {
     name:"blog",
     path:"/blog"

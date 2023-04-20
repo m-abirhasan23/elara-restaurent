@@ -5,11 +5,15 @@ import { Image } from "@astrojs/image/components";
 //assets
 import logo from "../../public/logo.svg";
 import { nav } from "../data/data";
+import Dynamic from "./Dynamic.astro";
+
+const { path, text } = Astro.props;
+console.log(text);
 ---
 
 <header class="flex-center">
   <nav class="flex-between">
-    <a class="contact" href="">Contact</a>
+    <Dynamic text={text} path={path} />
     <a href="/" class="logo">
       <Image src={logo} alt="" typeof="avif" width={100} class="logo-img" />
     </a>

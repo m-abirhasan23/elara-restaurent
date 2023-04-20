@@ -4,15 +4,18 @@ import working from "../assets/working.svg";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout title={"Read Our Latest Blogs"}>
-  <section class="our-blogs">
-    <h1 class="headline">Blogs Page Working On Progress...</h1>
+<MainLayout
+  title={"Read Our Latest Blogs"}
+  text={"booking"}
+  path="/reservation">
+  <section class="our-contacts">
+    <h1 class="headline">Contact Page Working On Progress...</h1>
     <Image src={working} alt=" working on progress " class="working-img" />
   </section>
 </MainLayout>
 
 <style>
-  .our-blogs {
+  .our-contacts {
     padding-block: 4rem;
     min-height: 100vh;
     margin-top: 2rem;

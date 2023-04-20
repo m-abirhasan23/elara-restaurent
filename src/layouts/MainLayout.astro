@@ -2,13 +2,14 @@
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import HeadLayout from "./HeadLayout.astro";
-const { title } = Astro.props;
+const { title, path, text } = Astro.props;
+console.log(Astro.props);
 ---
 
 <html lang="en">
   <HeadLayout {title} />
   <body>
-    <Navbar />
+    <Navbar {path} {text} />
     <main>
       <slot>Default Text</slot>
     </main>
