@@ -39,6 +39,38 @@ body {
   font-family: var(--font-primary);
   color: hsl(var(--clr-grey));
   background-color: hsl(var(--clr-blue));
+  overscroll-behavior: none;
+}
+
+#smooth-content {
+  overflow: visible;
+}
+
+/* Track */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: hsl(var(--clr-blue));
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: radial-gradient(
+    100% 197.75% at 0% 3.32%,
+    rgba(191, 52, 78, 0.25) 0%,
+    rgba(191, 52, 78, 0.25) 0.01%,
+    rgba(22, 194, 194, 0.25) 96.88%
+  );
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /* A elements that don't have a class get default styles */

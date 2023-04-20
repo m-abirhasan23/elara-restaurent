@@ -17,4 +17,11 @@ const { text, path } = Astro.props;
     position: relative;
     letter-spacing: var(--ls-xl);
   }
+  a:hover {
+    border: 0.5px solid hsl(var(--clr-grey));
+  }
+  a:focus {
+    border: 0.5px solid hsl(var(--clr-grey));
+    outline: 0.5px solid hsl(var(--clr-grey) / 7);
+  }
 </style>

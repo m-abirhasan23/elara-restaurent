@@ -3,14 +3,13 @@ import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import HeadLayout from "./HeadLayout.astro";
 const { title, path, text } = Astro.props;
-console.log(Astro.props);
 ---
 
 <html lang="en">
   <HeadLayout {title} />
-  <body>
+  <body id="smooth-wrapper">
     <Navbar {path} {text} />
-    <main>
+    <main id="smooth-containt">
       <slot>Default Text</slot>
     </main>
     <Footer />
